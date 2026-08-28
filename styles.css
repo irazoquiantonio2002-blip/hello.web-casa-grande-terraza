@@ -417,6 +417,46 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:600; color:var(--ink); letter
 .brands-note{ text-align:center; margin-top:32px; color:rgba(255,255,255,.55); font-size:14.5px; }
 
 /* ============================================================
+   CARRUSEL / GALERÍA
+   ============================================================ */
+.carousel{ position:relative; max-width:960px; margin:0 auto; }
+.carousel-viewport{
+  overflow:hidden; border-radius:var(--radius);
+  box-shadow:var(--shadow-2); background:var(--ink-2);
+}
+.carousel-track{ display:flex; transition:transform .6s var(--ease); will-change:transform; }
+.carousel-slide{ flex:0 0 100%; margin:0; }
+.carousel-slide img{ width:100%; aspect-ratio:16/10; object-fit:cover; display:block; }
+.carousel-btn{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  width:46px; height:46px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(21,19,15,.55); color:#fff; border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(6px); transition:background .25s var(--ease), color .25s var(--ease);
+}
+.carousel-btn:hover{ background:var(--gold-dark); color:var(--ink); }
+.carousel-btn--prev{ left:14px; }
+.carousel-btn--next{ right:14px; }
+.carousel-count{
+  position:absolute; right:16px; bottom:14px; z-index:2;
+  font-size:12.5px; font-weight:600; letter-spacing:.08em; color:#fff;
+  background:rgba(21,19,15,.55); border:1px solid rgba(255,255,255,.2);
+  padding:5px 12px; border-radius:999px; backdrop-filter:blur(6px);
+}
+.carousel-thumbs{
+  display:flex; gap:10px; max-width:960px; margin:18px auto 0;
+  overflow-x:auto; padding-bottom:6px; scrollbar-width:thin;
+}
+.carousel-thumb{
+  flex:0 0 92px; height:64px; border-radius:8px; overflow:hidden;
+  opacity:.5; border:2px solid transparent;
+  transition:opacity .25s var(--ease), border-color .25s var(--ease);
+}
+.carousel-thumb img{ width:100%; height:100%; object-fit:cover; }
+.carousel-thumb:hover{ opacity:.85; }
+.carousel-thumb.is-active{ opacity:1; border-color:var(--gold); }
+
+/* ============================================================
    CONTACT
    ============================================================ */
 .contact-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; }
@@ -439,6 +479,12 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:600; color:var(--ink); letter
 }
 .fi:focus{ outline:none; border-color:var(--gold); background:#fff; }
 textarea.fi{ resize:vertical; }
+
+.contact-map{
+  margin-top:44px; border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow-1); border:1px solid var(--line);
+}
+.contact-map iframe{ width:100%; height:420px; display:block; }
 
 /* ============================================================
    FOOTER
@@ -497,6 +543,10 @@ footer{ background:var(--ink); color:rgba(255,255,255,.7); padding:64px 0 26px; 
   .foot-grid{ grid-template-columns:1fr; }
   .foot-bottom{ flex-direction:column; }
   .trust-row{ flex-direction:column; align-items:flex-start; }
+  .carousel-btn{ width:38px; height:38px; }
+  .carousel-slide img{ aspect-ratio:4/3; }
+  .carousel-thumb{ flex-basis:72px; height:52px; }
+  .contact-map iframe{ height:320px; }
 }
 
 @media (max-width: 480px){
