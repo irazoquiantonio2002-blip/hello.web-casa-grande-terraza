@@ -345,7 +345,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:600; color:var(--ink); letter
 /* ============================================================
    PAQUETES / PRECIOS
    ============================================================ */
-.pkg-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:stretch; }
+.pkg-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; align-items:stretch; }
 .pkg-card{
   background:#fff; border:1px solid var(--line); border-radius:var(--radius);
   padding:38px 30px; text-align:center; display:flex; flex-direction:column;
